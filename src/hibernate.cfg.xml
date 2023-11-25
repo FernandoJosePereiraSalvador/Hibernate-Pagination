@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Connection properties -->
+
+        <!-- Driver JDBC -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Add ?createDatabaseIfNotExist=true to create database -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3308/Proyecto?useSSL=false</property>
+
+        <!-- User and password -->
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+
+        <!-- Extra configuration -->
+
+        <!-- JDBC connection pool for concurrent connections -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- Dialect connector. Useful for Foreign Keys -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- One thread, one session -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Show "real" SQL operations. Only for development -->
+        <property name="show_sql">true</property>
+
+        <!-- Database maintenance -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        
+
+    </session-factory>
+
+</hibernate-configuration>
